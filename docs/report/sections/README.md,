@@ -1,0 +1,95 @@
+# Báo cáo học phần Lăng Kính — Nhóm 1
+
+Bản trình bày chính: [PDF](output/lang-kinh-report.pdf). Source: [main.tex](main.tex), nội dung tách trong [sections](sections), [references.bib](references.bib). Thông tin trường/môn/lớp/giảng viên/tên/MSSV để trống. WBS là **đề xuất** 5 người, 20% mỗi người, không xác nhận đóng góp/giờ làm hay tạo commit giả.
+
+Không tìm thấy PDF đề bài hoặc DOCX cũ trong repo khi rà soát. Báo cáo đối chiếu yêu cầu người quản lý cung cấp, code hiện tại và bằng chứng thật; nhóm cần rà lại với PDF chính thức nếu được bổ sung.
+
+## Build
+
+Cài TeX Live/MiKTeX có XeLaTeX, fontspec, xurl, natbib, fancyvrb/fvextra, TikZ; font Liberation Serif, DejaVu Sans và Noto Sans Mono hỗ trợ tiếng Việt. Chạy từ thư mục này:
+
+```bash
+mkdir -p output
+xelatex -interaction=nonstopmode -halt-on-error -output-directory=output main.tex
+(cd output && BIBINPUTS=../: bibtex main)
+xelatex -interaction=nonstopmode -halt-on-error -output-directory=output main.tex
+xelatex -interaction=nonstopmode -halt-on-error -output-directory=output main.tex
+```
+
+Có thể dùng Tectonic (engine dựa trên XeTeX, tự lấy bundle và chạy BibTeX/rerun):
+
+```bash
+tectonic --keep-logs --keep-intermediates --outdir output main.tex
+cp output/main.pdf output/lang-kinh-report.pdf
+```
+
+Bản bàn giao dùng Tectonic 0.17.0 tải từ release chính thức. Công cụ/cache nằm ngoài repo; lần build đầu cần mạng. Không đổi tên đường dẫn source theme vì báo cáo lấy trích đoạn trực tiếp từ code hiện tại. Font có thể phải cài bổ sung trên máy nhận.
+
+Nếu cập nhật source, biên dịch lại PDF và chạy kiểm tra reference/font/overflow; không chỉ sửa một bản PDF riêng. File QA nằm tại [build-verification.json](build-verification.json); chạy lại bằng `python3 ../../scripts/verify-handover.py` sau khi copy PDF cuối theo lệnh build. DOCX nếu có chỉ là bản chỉnh sửa bổ sung; PDF LaTeX là bản chuẩn bố cục.
+
+## Bằng chứng và phạm vi
+
+Ảnh chụp mới từ LocalWP thật, Edge/DevTools; ảnh restore riêng có nhãn môi trường riêng. Hình sơ đồ trong LaTeX là sơ đồ thiết kế, không giả là screenshot. Crop để đọc watermark/header hoặc che vùng riêng tư không thay nội dung kết quả. Không dựng ảnh console WPScan từ text. Nguồn scan là log thật đã có trong [docs/security](../security); metadata lịch sử không biến thành lần chạy mới.
+
+- [Hồi quy LocalWP mới](verification-localwp.json).
+- [Kiểm chứng restore riêng](../../database/restore-verification.json).
+- [Danh mục hình và nguồn](FIGURES.md).
+- [WBS đề xuất](WBS.md).
+- [Giới hạn quyền tài sản](../../THIRD-PARTY-NOTICES.md).
+
+## Hình minh chứng
+
+![Trang chủ desktop](figures/home-desktop.png)
+
+![Trang chủ mobile](figures/home-mobile.png)
+
+![Album](figures/albums.png)
+
+![Tìm kiếm không dấu](figures/search.png)
+
+![Lightbox](figures/lightbox.png)
+
+![Khách truy cập form](figures/upload-guest.png)
+
+![Form tài khoản thử](figures/upload-form.png)
+
+![Tác phẩm pending](figures/upload-pending.png)
+
+![Kiểm duyệt](figures/moderation.png)
+
+![Watermark WebP mới](figures/watermark-new.png)
+
+![Network WebP](figures/network-webp.png)
+
+![Network fallback JPEG](figures/network-fallback.png)
+
+![Module hardening hiện tại](figures/hardening-current.png)
+
+![Khóa đăng nhập — bằng chứng lịch sử](figures/login-lockout.png)
+
+![Restore trên môi trường riêng](figures/restore-demo.png)
+
+## Hạn chế cần nhóm bổ sung
+
+- Chưa có hồ sơ nguồn/quyền sử dụng từng ảnh mẫu; chưa đủ điều kiện tuyên bố quyền tái phân phối công khai.
+- Chưa có kiểm tra CVE đầy đủ từng slug/version trong inventory, ZAP/Nmap hoặc production pentest.
+- Chưa có ảnh terminal WPScan toàn cửa sổ mới; dùng log thật, không tạo screenshot giả. Muốn bổ sung: chụp lần chạy thật/console log lịch sử ghi rõ, che token/hostname, giữ thời gian/phiên bản/lệnh/exit runner đúng lần chạy.
+- Nhóm tự điền thông tin học phần, xác nhận phân công và commit thực tế; không có xác nhận đóng góp cá nhân trong báo cáo này.
+
+## DOCX bổ sung
+
+[Bản DOCX chỉnh sửa](output/lang-kinh-editable.docx) được xuất từ nội dung LaTeX, kèm hình/sơ đồ và code trích thực tế. Đã render qua LibreOffice để kiểm tra bố cục. Tham chiếu số trong DOCX là **tĩnh theo PDF lúc xuất**, không phải field tự đánh số lại sau sửa; PDF/LaTeX là chuẩn. Muốn sửa lớn, cập nhật LaTeX rồi build/xuất lại:
+
+```bash
+# Sau build main.tex (cần output/main.aux):
+tectonic --outdir /duong-dan-tam figures/architecture.tex
+pdftoppm -singlefile -scale-to 1500 -png /duong-dan-tam/architecture.pdf figures/architecture
+# Cài python-docx và Pandoc trên môi trường riêng của người nhận.
+python3 ../../scripts/export-report-docx.py
+```
+
+Không đưa cache/tool/private credentials vào repo. Kiểm tra lại bản DOCX trên phần mềm người nhận vì font, bảng và ngắt trang có thể khác PDF LaTeX.
+
+[Đối chiếu file live, Stop/Start và phạm vi thay đổi](handover-verification.json). PDF đã kiểm tra 35 trang, Phần 1 là 4 trang; xem JSON QA để kiểm tra lại sau sửa.
+
+Kiểm tra DOCX: [docx-verification.json](docx-verification.json) ghi lần render bằng LibreOffice, số bảng/ảnh nhúng và bìa đủ 5 dòng thành viên. Nội dung/ảnh cuối đã được đối chiếu; các khác biệt bố cục Word vẫn cần kiểm tra trên máy người nhận.
