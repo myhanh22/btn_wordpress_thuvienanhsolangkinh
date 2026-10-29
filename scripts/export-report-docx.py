@@ -59,3 +59,4 @@ for i,node in enumerate(nodes):d._element.body.insert(i,node)
 d.core_properties.author='';d.core_properties.last_modified_by='';d.core_properties.title='Lăng Kính — Nhóm 1';d.core_properties.subject='Bản chỉnh sửa bổ sung; PDF LaTeX là bản trình bày chính'
 d.save(p)
 print('Editable DOCX exported with explicit cover, actual code excerpts, diagram and static references from current PDF.')
+///v
