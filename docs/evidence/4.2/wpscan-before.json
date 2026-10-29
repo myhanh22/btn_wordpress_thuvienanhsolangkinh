@@ -1,0 +1,55 @@
+{
+  "tool": "WPScan",
+  "tool_version": "3.8.28",
+  "scope": "http://baitapnhom1.local/",
+  "start_time": 1793092485,
+  "stop_time": 1793092582,
+  "start_time_utc": "2026-10-27T09:14:45+00:00",
+  "stop_time_utc": "2026-10-27T09:16:22+00:00",
+  "elapsed_seconds": 96,
+  "requests_done": 690,
+  "cached_requests": 11,
+  "scan_aborted": null,
+  "command_without_secrets": "wpscan --url http://baitapnhom1.local --enumerate vp,vt --plugins-detection passive --max-threads 2 --throttle 100 --no-update --no-banner --format json --output <PRIVATE_RAW_OUTPUT>",
+  "vulnerability_api": {
+    "token_provided": false,
+    "vulnerability_data_available": false,
+    "limitation": "No API token: no vulnerability database findings can be inferred. Passive detection is not a full plugin inventory."
+  },
+  "detected_wordpress": {
+    "number": "7.1.3",
+    "status": "latest",
+    "found_by": "Rss Generator (Passive Detection)",
+    "confidence": 100
+  },
+  "findings": [
+    {
+      "type": "headers",
+      "summary": "Headers",
+      "found_by": "Headers (Passive Detection)"
+    },
+    {
+      "type": "robots_txt",
+      "summary": "robots.txt found: http://baitapnhom1.local/robots.txt",
+      "found_by": "Robots Txt (Aggressive Detection)"
+    },
+    {
+      "type": "xmlrpc",
+      "summary": "XML-RPC seems to be enabled: http://baitapnhom1.local/xmlrpc.php",
+      "found_by": "Direct Access (Aggressive Detection)"
+    },
+    {
+      "type": "readme",
+      "summary": "WordPress readme found: http://baitapnhom1.local/readme.html",
+      "found_by": "Direct Access (Aggressive Detection)"
+    },
+    {
+      "type": "wp_cron",
+      "summary": "The external WP-Cron seems to be enabled: http://baitapnhom1.local/wp-cron.php",
+      "found_by": "Direct Access (Aggressive Detection)"
+    }
+  ],
+  "detected_plugins": {},
+  "detected_themes": {},
+  "exit_code": 0
+}
