@@ -1,0 +1,48 @@
+\chapter{Bàn giao, WBS và hướng phát triển}
+\label{ch:handover}
+\section{Phạm vi bộ mã nguồn bàn giao}
+Bộ nộp gồm child theme, các file PHP/CSS/JS tự viết, module bảo mật, snippet Nginx, script hỗ trợ, SQL demo sạch và hướng dẫn khôi phục. Không di chuyển hàng loạt inc/assets hoặc thay đường dẫn đang dùng. WordPress core, Astra và plugin vendor được người nhận cài riêng từ nguồn chính thức. Không đưa wp-config.php, backup thật, SQL gốc, key Wordfence hay URL đăng nhập riêng vào bộ nộp.
+
+SQL được tạo từ clone database LocalWP thực tế. Site chính giữ tài khoản/tác phẩm/banner; thao tác làm sạch chỉ thực hiện trong DB clone. Clone bỏ bảng log/plugin chứa cấu hình nhạy cảm, xóa session/reset data và thay danh tính người dùng bằng tác giả demo. Các dòng user\_pass chứa marker vô hiệu, không phải hash tài khoản thật và không có mật khẩu mặc định công khai.
+
+Các tác phẩm cũ trên site nguồn đang ở thùng rác, không có bài lk\_photo đã xuất bản tại thời điểm trích xuất. SQL giữ quan hệ cần thiết của phần dữ liệu được chọn và bổ sung hai bài publish/pending chỉ trên clone, có tiêu đề/nội dung ghi rõ tính minh họa. Những attachment có thể là ảnh chụp riêng được thay trong clone bằng ảnh demo đã có trong repo; ID quan hệ được giữ, metadata được tạo lại đúng file thay thế. Không gọi các dữ liệu bổ sung đó là hoạt động thật của người dùng site chính.
+
+\section{Khôi phục đã kiểm chứng và khác biệt môi trường}
+Bản thử khôi phục chạy WordPress qua PHP development server trên loopback, không phải Nginx LocalWP của site chính. Quy trình kiểm chứng tạo database thứ hai trống, import đúng SQL xuất từ clone, đổi URL bằng WP-CLI search-replace có hỗ trợ serialized data, rồi phục hồi media từ manifest. Môi trường restore không chép uploads gốc; file demo được lấy từ đường dẫn repo có SHA-256 và sinh lại các kích thước WordPress. Kiểm tra cho thấy 9 attachment hợp lệ, ít nhất 7 chủ đề, một tác phẩm công khai cùng đủ 30 mẫu và dữ liệu serialized đọc được. Đăng nhập HTTP sau tạo admin mới được kiểm tra riêng.
+\shot{restore-demo.png}{Website từ database khôi phục riêng sau import và phục hồi media. Nguồn: môi trường kiểm thử độc lập; ảnh này không được dùng làm bằng chứng cấu hình thành công trên LocalWP chính.}{fig:restore}
+
+SQL không chứa toàn bộ dữ liệu nhị phân ảnh. Bộ demo hiện tái sử dụng ảnh đã có trong child theme qua manifest để tránh đưa screenshot/upload riêng tư vào repo. Với nội dung thật cần bàn giao về sau, phải xuất media được phép sử dụng, giữ đường dẫn tương đối và metadata phù hợp, đồng thời có hồ sơ nguồn/quyền. Không sao chép toàn bộ iw-backup hoặc wflogs rồi coi là media công khai.
+
+Trên máy khác, người nhận tạo database/config/salt mới, cài dependency và tạo tài khoản admin qua Site Shell. Wordfence cần key/onboarding riêng; LLAR cần kiểm tra IP thật nếu có proxy; WPS cần slug riêng mới; watermark cần font và kích thước đầu ra; Nginx phải include snippet đúng vị trí và được Start/Stop. SQL cố ý không mang theo các secret/cấu hình cấp phép của máy nguồn. Hướng dẫn chi tiết nằm tại docs/installation/README.md và database/README.md.
+
+\section{WBS và phân công đề xuất}
+Năm thành viên được gán mã TV1--TV5, mục tiêu khoảng 20\% mỗi người. Đây là tỷ trọng đề xuất để tổ chức công việc, không phải số giờ đã đo hoặc cam kết đóng góp được xác nhận. Các đầu ra trong repo đã có một phần hoặc được chuẩn hóa trong đợt này; người thực hiện và commit tương ứng vẫn phải được nhóm xác nhận bằng lịch sử thật. Không sửa author hoặc tạo commit giả để khớp WBS.
+\begingroup\footnotesize\setlength{\tabcolsep}{3pt}
+\begin{longtable}{P{0.9cm}P{2.6cm}P{0.8cm}P{2.6cm}P{1.2cm}P{3.5cm}P{2.1cm}}
+\caption{WBS đề xuất cho 5 thành viên, khoảng 20\% mỗi người}\label{tab:wbs}\\\toprule Mã & Đầu việc & TV & Đầu ra & Phụ thuộc & Tiêu chí nghiệm thu & Trạng thái\\\midrule\endfirsthead\toprule Mã & Đầu việc & TV & Đầu ra & Phụ thuộc & Tiêu chí nghiệm thu & Trạng thái\\\midrule\endhead
+1.1 & Môi trường, inventory & TV1 & Phiên bản, đường dẫn & Không & Đúng repo/site, phân biệt runtime & Có đầu ra*\\
+1.2 & SQL sạch và restore & TV1 & SQL, manifest, README & 1.1 & Clone thật, import riêng, không secret & Có đầu ra*\\
+1.3 & Kernel và khung LaTeX & TV1 & Phần kernel, main.tex & 1.1 & Citation, PDF build được & Có đầu ra*\\
+2.1 & Giao diện, banner & TV2 & Child theme, ảnh UI & 1.1 & Giữ Astra, không thay banner tự động & Có đầu ra*\\
+2.2 & Album, filter, search, lightbox & TV2 & JS/CSS, test UI & 2.1 & Không dấu, bàn phím, mobile & Có đầu ra*\\
+2.3 & So sánh phân quyền OS & TV2 & Nội dung Phần 1 & 1.1 & Giải thích file/thư mục, ACL & Có đầu ra*\\
+3.1 & Upload và pending & TV3 & Handler, test request & 2.1 & Hai lần gửi, MIME/size/cleanup & Có đầu ra*\\
+3.2 & Watermark/WebP & TV3 & Snippet, ảnh Network & 3.1 & Mark còn nguyên, MIME/fallback đúng & Có đầu ra*\\
+3.3 & Quản lý bản vá & TV3 & Nội dung Phần 1 & 1.1 & OS khác runtime/WordPress & Có đầu ra*\\
+4.1 & Hardening/account & TV4 & Module, config, ảnh & 1.1 & Login/lockout/XML-RPC kiểm chứng & Có đầu ra*\\
+4.2 & Lập trình an toàn & TV4 & Review code/capability & 3.1 & Nonce + quyền, Author không publish & Có đầu ra*\\
+4.3 & GPL/thương mại & TV4 & Nội dung license & 1.1 & Không đánh đồng Ubuntu/mã/ảnh & Có đầu ra*\\
+5.1 & WPScan/sanitizer & TV5 & Log sạch, test script & 4.1 & Không giả exit/API/WAF, che header & Có đầu ra*\\
+5.2 & Hồi quy tích hợp & TV5 & Test và đối chiếu & 2.2, 3.2, 4.2 & Passed/unrun tách rõ, giữ dữ liệu & Có đầu ra*\\
+5.3 & Auditability, biên tập & TV5 & Citation, license, PDF QA & 1.3--5.2 & Không lỗi tham chiếu, ảnh, font hoặc tràn bảng & Có đầu ra*\\\bottomrule
+\end{longtable}\endgroup
+\noindent *Có đầu ra trong bộ bàn giao, \textbf{chưa xác nhận thành viên nào đã thực hiện}. Nhóm cần điền người, commit/test/tài liệu thực tế sau review. Không coi các mục có đầu ra là năm người đã đóng góp đều nhau.
+
+Mỗi thành viên nên review đầu ra phụ thuộc trước khi nhận phần tiếp theo, tự viết nội dung phụ trách và đính kèm test/ảnh thực tế. TV1 quản lý khung biên dịch không có nghĩa viết thay toàn báo cáo. TV5 kiểm tra tính nhất quán không được thay nguồn log cũ bằng kết quả giả mới. Commit nhỏ theo công việc giúp đối chiếu thay đổi với test và bảo toàn tác giả thật.
+
+\section{Hạn chế và hướng phát triển}
+Một số tiêu đề album còn có độ tương phản chưa đồng đều trên ảnh nền; chưa đánh giá hoặc tuyên bố đạt WCAG. Bộ demo phù hợp trình diễn cục bộ nhưng chưa có kiểm thử tải lớn, production TLS hoặc đầy đủ CVE trên mọi thành phần. Truy vấn toàn bộ tác phẩm có thể cần phân trang; tìm kiếm client cần thay đổi khi thư viện lớn. Chính sách mật khẩu là lớp kiểm tra tối thiểu, chưa tương đương đánh giá mật khẩu rò rỉ hoặc triển khai MFA. Basic WAF cũng không thay thế vá phần mềm.
+
+Hồ sơ nguồn/quyền của từng ảnh cần được nhóm bổ sung trước công bố rộng. Khi có dữ liệu thật được phép bàn giao, có thể xây gói media riêng có checksum thay vì dùng ảnh thay thế. Các ảnh cấu hình và log lịch sử cần được gắn thời gian; ảnh mới nên chụp sau khi thay plugin/config. Quản trị viên phải tự điền thông tin học phần và xác nhận WBS, repo nộp cuối, đóng góp cá nhân.
+
+Các cải tiến tiếp theo nên theo trình tự kiểm kê--backup--clone--thử--review--triển khai. Bộ mã hiện không tự push, merge hoặc deploy lên website công khai. Việc bàn giao có ý nghĩa khi người nhận có thể phục hồi, kiểm tra kết quả và hiểu rõ phần nào được chứng minh, thay vì chỉ nhận một giao diện chụp đẹp hoặc một file SQL không rõ nguồn gốc.

@@ -1,0 +1,15 @@
+{
+  "scope": "LocalWP app/public only",
+  "same_owner_as_php_nginx": true,
+  "owner_group_unchanged": true,
+  "directory_mode": "0755",
+  "file_mode": "0644",
+  "wp_config_mode": "0400",
+  "counts": {
+    "directories": 1039,
+    "files": 6096,
+    "symlinks_skipped": 0
+  },
+  "sensitive_wordfence_data_mode": "0600 (plugin-managed, more restrictive than 0644)",
+  "final_state_evidence": "final-verification.json"
+}
