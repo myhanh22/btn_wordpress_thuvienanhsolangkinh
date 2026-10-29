@@ -1,0 +1,66 @@
+_______________________________________________________________
+         __          _______   _____
+         \ \        / /  __ \ / ____|
+          \ \  /\  / /| |__) | (___   ___  __ _ _ __ ®
+           \ \/  \/ / |  ___/ \___ \ / __|/ _` | '_ \
+            \  /\  /  | |     ____) | (__| (_| | | | |
+             \/  \/   |_|    |_____/ \___|\__,_|_| |_|
+
+                  WordPress Security Scanner
+                         Version 4.1.0
+                    An Automattic endeavor
+                    https://automattic.com
+_______________________________________________________________
+
+[i] It seems like you have not updated the database for some time.
+[?] Do you want to update now? [Y]es [N]o, default: [N][+] URL: http://baitapnhom1.local/ [127.0.0.1]
+[+] Started: Tue Oct 27 12:18:16 2026
+[+] Command Line: wpscan --url http://baitapnhom1.local --random-user-agent --enumerate vp,vt --detection-mode passive --plugins-detection passive
+[+] Hostname: [REDACTED]
+
+Interesting Finding(s):
+
+[+] Headers
+ | Interesting Entries:
+ |  - Server: nginx/1.26.1
+ |  - Referrer-Policy: strict-origin-when-cross-origin
+ | Found By: Headers (Passive Detection)
+ | Confidence: 100%
+
+[i] The WordPress version could not be detected.
+
+[+] WordPress theme in use: astra
+ | Location: http://baitapnhom1.local/wp-content/themes/astra/
+ | Latest Version: 4.14.0 (up to date)
+ | Last Updated: 2026-10-15 12:00am GMT (12 days ago, per WordPress.org)
+ | Active Installs: 1,000,000 (per WordPress.org)
+ | Style URL: http://baitapnhom1.local/wp-content/themes/astra/style.css?ver=4.14.1
+ | Style Name: Astra
+ | Style URI: https://wpastra.com/
+ | Description: The Astra WordPress theme is lightning-fast and highly customizable. It has over 1 million downloads...
+ | Author: Brainstorm Force
+ | Author URI: https://wpastra.com/about/?utm_source=theme_preview&utm_medium=author_link&utm_campaign=astra_theme
+ |
+ | Found By: Css Style In Homepage (Passive Detection)
+ | Confirmed By: Css Style In 404 Page (Passive Detection)
+ |
+ | Version: 4.14.1 (80% confidence)
+ | Found By: Style (Passive Detection)
+ |  - http://baitapnhom1.local/wp-content/themes/astra/style.css?ver=4.14.1, Match: 'Version: 4.14.1'
+
+[+] Enumerating Vulnerable Plugins (via Passive Methods)
+[i] No plugins Found.
+[+] Enumerating Vulnerable Themes (via Passive Methods)
+[i] No themes Found.
+[+] WPScan DB API OK
+ | Plan: free
+ | Requests Done (during the scan): 3
+ | Requests Remaining: 19
+[+] Finished: Tue Oct 27 12:18:24 2026
+[+] Requests Done: 15
+[+] Cached Requests: 9
+[+] Most response codes received: 200: 13, 404: 2
+[+] Data Sent: 4.158 KB
+[+] Data Received: 395.27 KB
+[+] Memory used: 246.629 MB
+[+] Elapsed time: 00:00:07
