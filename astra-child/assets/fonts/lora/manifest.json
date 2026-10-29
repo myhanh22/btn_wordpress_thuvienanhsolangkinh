@@ -1,0 +1,30 @@
+{
+  "google_fonts_commit": "9862abc066c9b83bf84c3e8ed1fc2d8d48f9bbf0",
+  "conversion": "FontTools 4.68.0: TTFont(source); font.flavor=\"woff2\"; font.save(destination). Full glyph set retained.",
+  "fonts": [
+    {
+      "source": "Lora[wght].ttf",
+      "file": "lora-normal.woff2",
+      "sha256": "2bcbbd6e5fb5ed55d6fa398acb1be32484e818d113bc3c2e66ca187c40392ecf",
+      "glyphs": 892,
+      "vietnamese_codepoints_checked": 154,
+      "version": "Version 3.008",
+      "weight_axis": [
+        400.0,
+        700.0
+      ]
+    },
+    {
+      "source": "Lora-Italic[wght].ttf",
+      "file": "lora-italic.woff2",
+      "sha256": "a3f6cf7f87baef8d214dd7d214cb084fc1629311428d14d95d0326adc882b65c",
+      "glyphs": 889,
+      "vietnamese_codepoints_checked": 154,
+      "version": "Version 3.008",
+      "weight_axis": [
+        400.0,
+        700.0
+      ]
+    }
+  ]
+}
