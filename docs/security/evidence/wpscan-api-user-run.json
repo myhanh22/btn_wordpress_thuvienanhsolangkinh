@@ -1,0 +1,58 @@
+{
+  "provenance": {
+    "executed_by": "user",
+    "execution_environment": "Docker, --network host, image wpscanteam/wpscan",
+    "verified_by_agent": "Terminal output supplied by user matches the local capture file. Agent did not execute this Docker run or obtain the token.",
+    "source_file": "docs/security/wpscan-retry.txt",
+    "source_sha256": "34355173537a8743e7cfa1660fc86df8b84516c55ff5bf8a158a6c4a8d6dfbe7",
+    "redaction": "Personal workstation hostname removed; original preserved outside Git."
+  },
+  "tool": "WPScan",
+  "tool_version_reported": "4.1.0",
+  "scope": "http://baitapnhom1.local/",
+  "started_at_reported": "Tue Oct 27 12:18:16 2026",
+  "finished_at_reported": "Tue Oct 27 12:18:24 2026",
+  "timezone": "Not printed in supplied tool output; no UTC assumption.",
+  "elapsed_seconds_reported": 7,
+  "http_requests": 15,
+  "cached_requests": 9,
+  "response_codes_reported": {
+    "200": 13,
+    "404": 2
+  },
+  "command_without_secret": "sudo --preserve-env=WPSCAN_API_TOKEN docker run --rm --network host --add-host=baitapnhom1.local:127.0.0.1 -e WPSCAN_API_TOKEN wpscanteam/wpscan --url http://baitapnhom1.local --random-user-agent --enumerate vp,vt --detection-mode passive --plugins-detection passive",
+  "completion": "Finished marker present; no scan-aborted marker.",
+  "exit_code": null,
+  "exit_code_note": "Scanner exit code was not captured; tee pipeline alone does not establish it.",
+  "vulnerability_api": {
+    "status_reported": "OK",
+    "plan": "free",
+    "requests_during_scan": 3,
+    "requests_remaining": 19,
+    "credential_value_saved_in_repo": false
+  },
+  "detection": {
+    "wordpress_version": null,
+    "plugins_detected": [],
+    "vulnerable_themes_enumeration_detected": [],
+    "theme_identified": {
+      "slug": "astra",
+      "version": "4.14.1",
+      "confidence_percent": 80,
+      "latest_version_metadata_reported": "4.14.0"
+    }
+  },
+  "configuration_observations": {
+    "server_header": "nginx/1.26.1",
+    "referrer_policy": "strict-origin-when-cross-origin"
+  },
+  "vulnerability_findings_reported": [],
+  "limitations": [
+    "Passive enumeration did not identify the six plugins recorded in the filesystem inventory.",
+    "Core version was not detected in this run; it does not establish core CVE coverage.",
+    "No CVE findings printed is not evidence that no vulnerabilities exist.",
+    "The output warns about old detection metadata; a completed metadata update is not evidenced.",
+    "Nine cached responses were used; this was not an uncached full inventory scan.",
+    "Theme metadata latest 4.14.0 versus detected 4.14.1 is not sufficient to conclude update status."
+  ]
+}
