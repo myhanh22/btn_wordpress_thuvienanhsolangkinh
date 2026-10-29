@@ -1,0 +1,109 @@
+{
+  "time_utc": "2026-10-27T10:50:47.236874+00:00",
+  "scope": "http://baitapnhom1.local",
+  "after_actual_stop_start": true,
+  "checks": {
+    "/": {
+      "final_status": 200,
+      "generator_tag_present": false,
+      "directory_listing": false,
+      "content_type": "text/html; charset=UTF-8",
+      "x_powered_by": null,
+      "cache_busting_preserved": true,
+      "final_gallery_cards": 30,
+      "banner_is_fixed": true
+    },
+    "/feed/": {
+      "final_status": 200,
+      "generator_tag_present": false,
+      "directory_listing": false,
+      "content_type": "application/rss+xml; charset=UTF-8",
+      "x_powered_by": null
+    },
+    "/wp-includes/": {
+      "final_status": 403,
+      "generator_tag_present": false,
+      "directory_listing": false,
+      "content_type": "text/html",
+      "x_powered_by": null
+    },
+    "/wp-content/uploads/": {
+      "final_status": 403,
+      "generator_tag_present": false,
+      "directory_listing": false,
+      "content_type": "text/html",
+      "x_powered_by": null
+    },
+    "/xmlrpc.php": {
+      "final_status": 403,
+      "generator_tag_present": false,
+      "directory_listing": false,
+      "content_type": "text/html",
+      "x_powered_by": null
+    },
+    "/readme.html": {
+      "final_status": 403,
+      "generator_tag_present": false,
+      "directory_listing": false,
+      "content_type": "text/html",
+      "x_powered_by": null
+    },
+    "/wp-admin/install.php": {
+      "final_status": 403,
+      "generator_tag_present": false,
+      "directory_listing": false,
+      "content_type": "text/html",
+      "x_powered_by": null
+    },
+    "/wp-admin/setup-config.php": {
+      "final_status": 403,
+      "generator_tag_present": false,
+      "directory_listing": false,
+      "content_type": "text/html",
+      "x_powered_by": null
+    },
+    "/wp-config.php": {
+      "final_status": 403,
+      "generator_tag_present": false,
+      "directory_listing": false,
+      "content_type": "text/html",
+      "x_powered_by": null
+    },
+    "/wp-json/": {
+      "final_status": 200,
+      "generator_tag_present": false,
+      "directory_listing": false,
+      "content_type": "application/json; charset=UTF-8",
+      "x_powered_by": null
+    },
+    "/wp-admin/admin-ajax.php": {
+      "final_status": 400,
+      "generator_tag_present": false,
+      "directory_listing": false,
+      "content_type": "text/html; charset=UTF-8",
+      "x_powered_by": null
+    },
+    "/wp-login.php": {
+      "final_status": 404,
+      "generator_tag_present": false,
+      "directory_listing": false,
+      "content_type": "text/html; charset=UTF-8",
+      "x_powered_by": null
+    },
+    "/wp-admin/": {
+      "final_status": 404,
+      "generator_tag_present": false,
+      "directory_listing": false,
+      "content_type": "text/html; charset=UTF-8",
+      "x_powered_by": null
+    },
+    "/[PRIVATE_LOGIN]/": {
+      "final_status": 200,
+      "generator_tag_present": false,
+      "directory_listing": false,
+      "content_type": "text/html; charset=UTF-8",
+      "x_powered_by": null
+    }
+  },
+  "xmlrpc_post_status": 403
+}

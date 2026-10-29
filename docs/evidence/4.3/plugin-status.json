@@ -1,0 +1,13 @@
+{
+  "hardening_active": true,
+  "wordfence_active": true,
+  "wordfence_key_present": true,
+  "wordfence_onboarding_prompt": false,
+  "wordfence_login_security": false,
+  "file_editor_disabled": true,
+  "converter_active": false,
+  "config_readable_by_php": true,
+  "waf_mode": "enabled",
+  "waf_protection": "basic",
+  "application_passwords_forced_disabled": false
+}

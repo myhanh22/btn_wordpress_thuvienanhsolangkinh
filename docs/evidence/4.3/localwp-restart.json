@@ -1,0 +1,11 @@
+{
+  "stop_start_via": "Authenticated LocalWP CLI Unix socket; token not recorded",
+  "start_time_utc": "2026-10-27T10:15:53Z",
+  "end_time_utc": "2026-10-27T10:16:00Z",
+  "homepage_status": 200,
+  "nginx_include_regenerated": true,
+  "nginx_site_references_include": true,
+  "install_wizard_block_regenerated": true,
+  "php_errors_off": true,
+  "php_expose_off": true
+}

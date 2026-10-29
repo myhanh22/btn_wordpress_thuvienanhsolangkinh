@@ -1,0 +1,8 @@
+{
+  "tool": "WPScan 3.8.28",
+  "scope": "http://baitapnhom1.local/",
+  "exit_code": 4,
+  "scan_aborted": "The target is responding with a 403, this might be due to a WAF. Please re-try with --random-user-agent",
+  "waf_mode": "enabled/basic",
+  "note": "Default WPScan user-agent blocked; this is not a completed vulnerability scan."
+}
