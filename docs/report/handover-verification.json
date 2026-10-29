@@ -1,0 +1,29 @@
+{
+  "time_utc": "2026-10-27T15:53:46.121748+00:00",
+  "baseline_branch": "huyyhoangg",
+  "baseline_head": "55dd374",
+  "baseline_worktree_clean": true,
+  "site_scope": "LocalWP baitapnhom1.local, real site",
+  "backup_outside_repo": true,
+  "same_source_and_live_files": 70,
+  "deployment_change_this_task": [
+    "astra-child/HUONG-DAN.md (documentation only)"
+  ],
+  "runtime_code_and_templates_unchanged": true,
+  "actual_stop_start": true,
+  "regenerated_webp_include_matches": true,
+  "http_after_restart": {
+    "/": 200,
+    "/xmlrpc.php": 403,
+    "/wp-content/uploads/": 403
+  },
+  "wp_config_mode": "0o400",
+  "sql_sha256": "7e4cb9d45d95cb794bb31935ad2de5e0768d4f096970e19d4028b5b88430b70a",
+  "restore_evidence": "../../database/restore-verification.json",
+  "privacy_check": "SQL compared against actual identities/hashes/private login slug/key; none present",
+  "limitations": [
+    "Image provenance/license not established for each existing sample",
+    "No new CVE assessment or new terminal screenshot fabricated",
+    "No production or ZAP/Nmap test"
+  ]
+}
