@@ -4,7 +4,8 @@ Phiên bản dưới đây là những gói được cài trong site LocalWP `ba
 
 | Thành phần | Phiên bản | Trạng thái | Giấy phép | Mục đích |
 |---|---:|---|---|---|
-| Lăng Kính — Astra Child | 2.4.1 | Đang dùng | GPL-2.0-or-later | Giao diện, CPT thư viện ảnh và form gửi ảnh |
+| Lăng Kính — Astra Child | 2.4.2 | Typography cập nhật 28/10/2026 | GPL-2.0-or-later | Giao diện, CPT thư viện ảnh và form gửi ảnh |
+| Lora (Cyreal / The Lora Project Authors) | 3.008, variable 400–700 normal + italic | WOFF2 đầy đủ glyph trong child theme | SIL OFL-1.1, Reserved Font Name Lora | Serif tiếng Việt; [giấy phép](astra-child/assets/fonts/lora/OFL.txt), [nguồn và checksum](astra-child/assets/fonts/lora/manifest.json) |
 | Astra | 4.14.1 | Theme cha | GPL-2.0-or-later | Theme nền |
 | Twenty Twenty-Five | 1.5 | Không hoạt động | GPL-2.0-or-later | Theme mặc định WordPress |
 | Twenty Twenty-Four | 1.6 | Không hoạt động | GPL-2.0-or-later | Theme mặc định WordPress |
@@ -17,6 +18,8 @@ Phiên bản dưới đây là những gói được cài trong site LocalWP `ba
 | Lăng Kính Security (nhóm 1) | 1.0.0 | Đang hoạt động, mã trong repo | GPL-2.0-or-later | Chính sách mật khẩu và hardening độc lập theme |
 
 ## Nguồn xác minh
+
+- Lora: [Google Fonts tại commit cố định](https://github.com/google/fonts/tree/9862abc066c9b83bf84c3e8ed1fc2d8d48f9bbf0/ofl/lora). Chỉ đóng gói TTF sang WOFF2 bằng FontTools 4.68.0, giữ toàn bộ glyph/kiểu/weight; không subset, không đổi outline. Font giữ giấy phép riêng OFL, không đổi sang GPL/MIT. Giữ OFL.txt khi phân phối; không bán font riêng lẻ.
 
 - [Astra](https://wordpress.org/themes/astra/) và WordPress mặc định: metadata `style.css` trong từng theme đã cài.
 - [Image Watermark](https://wordpress.org/plugins/image-watermark/): header và `readme.txt` trong gói phiên bản 2.0.16 khai báo MIT.
