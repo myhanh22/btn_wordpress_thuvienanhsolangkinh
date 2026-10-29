@@ -1,5 +1,7 @@
 # Phạm vi mã nguồn và giấy phép
 
+- `astra-child/assets/fonts/lora/`: Lora 3.008, Copyright 2011 The Lora Project Authors, Reserved Font Name "Lora", SIL Open Font License 1.1. Bản normal/italic đầy đủ glyph, đóng gói WOFF2 từ Google Fonts; giấy phép đi kèm tại `OFL.txt`, nguồn/checksum tại `manifest.json`. Điều kiện OFL áp dụng riêng cho font.
+
 - Giữ nguyên `LICENSE` gốc MIT, gồm thông báo `Copyright (c) 2026 myhanh22`. Không thay tác giả hoặc diễn giải LICENSE này thành quyền đổi giấy phép mọi tài sản trong repo.
 - Child theme `astra-child/` khai báo GPL-2.0-or-later tại `style.css`. Module `security/lang-kinh-security/` khai báo GPL-2.0-or-later trong header. Giữ nguyên các khai báo đó; PHP/CSS/JS nhóm quản lý được trình bày theo phạm vi thành phần, không phải sửa vendor Astra.
 - WordPress core, Astra và plugin bên thứ ba cài riêng; không được tái cấp phép theo MIT gốc của repo. Kiểm kê phiên bản/license/nguồn ở [PLUGIN-LICENSES.md](PLUGIN-LICENSES.md). Plugin active không chứng minh có license trả phí.
