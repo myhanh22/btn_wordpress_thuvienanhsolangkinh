@@ -1,0 +1,127 @@
+{
+    "text": "© Lăng Kính · Nhóm 1",
+    "font": "OpenSans-Regular.ttf",
+    "opacity": 65,
+    "photos": {
+        "ban-hoa-30.jpg": {
+            "original_sha256": "0f5aecce6e40d8f6df7a6fbc25bbc6d8a55526b71ada08de2e97ec25c4b8e68a",
+            "watermarked_sha256": "036f2279a909d823485a17134b0409d888c0fcc211793d271e063f4cb8a84b6a"
+        },
+        "banh-ngot-07.jpg": {
+            "original_sha256": "a8992934fc65da7ae9549d3db780d275fcb1fd607e6f10765fc850a5f1b8b9c9",
+            "watermarked_sha256": "8e68dd271025d300f5fac492b4f674b80212ce44d3ef64777e88e0effb7285bf"
+        },
+        "be-gai-10.jpg": {
+            "original_sha256": "afbb9b41107e5ac53f120dda6e15520289b0b3054488d13cd1a99a3575d98278",
+            "watermarked_sha256": "a432ce8633e720fe81e8c7e587ae64792607bd674daececb8ac099103776f657"
+        },
+        "be-gai-ha-giang-19.jpg": {
+            "original_sha256": "19402b76ac8c0400f753f5d27c8058f3dcf6b76b63b38c1abd343939fd1612b6",
+            "watermarked_sha256": "78f587e17c94f1619dcb8dd9a3eb0af8cf6a9d6e53e426e6792e1e4b380f8291"
+        },
+        "canh-dong-hoa-18.jpg": {
+            "original_sha256": "6c1a5fad72a69953c34203af8b742126d9899f837e79ae89d45bf09c76be7961",
+            "watermarked_sha256": "99900fd30668602ca9d13c0412d54f8ee4478373ab9312ef34402baf019678bd"
+        },
+        "cay-lua-21.jpg": {
+            "original_sha256": "b0472c365936c89424d62b26b1eefe3e0810c6138efa8848f7b2fcf8dbb7a97c",
+            "watermarked_sha256": "1a3d9d0ede095c6e164d3328e05a0ac7a9a9e959ff3e2e590fb5dfad059a791b"
+        },
+        "chan-trau-25.jpg": {
+            "original_sha256": "e712fcac41e7a53c9bade8f01c8fac9fb3904d33cda10098482eb5bed4981ba0",
+            "watermarked_sha256": "b1196bd608890395d7a04ff777be5c892a0647b6e9a79ae03328554905299688"
+        },
+        "cho-con-04.jpg": {
+            "original_sha256": "80fe20e0214dddc3504f1706faddeee0f6aa9b69713d59b4faf6a2adc2d9f783",
+            "watermarked_sha256": "b20bd7ab4ba95e805972fc641750c9bc1b11c5518dba2b0049b3af33a955d8b4"
+        },
+        "cho-da-lat-29.jpg": {
+            "original_sha256": "c6959a16741f75ad0bfd6e44bdc59854241cd9e24b1b33305bd84a3b07195fbf",
+            "watermarked_sha256": "185a6e604bf252a0322ff01bbf56a9e02e13700fb79826252dc63b5b40e49946"
+        },
+        "co-gai-che-o-08.jpg": {
+            "original_sha256": "5124f69e192c0e8a402f62076cd4d718a98b9177e15dd7a419314bbcd51a4eed",
+            "watermarked_sha256": "c012af683b62364f85eaba1240c512c58030163370a1484ff66959531cb46b9e"
+        },
+        "co-gai-doi-mu-27.jpg": {
+            "original_sha256": "d35ab03f9a78cb55f015e89f00cd9585459bed8339a80a3e230b91f6b8366278",
+            "watermarked_sha256": "f511f86521d41dd7317d03e0f5901a5b3e8b72013301e55504395e27f7f73b96"
+        },
+        "con-bo-13.jpg": {
+            "original_sha256": "a56159ba8c49044a608bf78db150b5be4a84fd0015bcaf0da0069da7061668de",
+            "watermarked_sha256": "c87ff2739934526d7de54f9acabee42c832fca0bad7dacbf3e427de4330cdb45"
+        },
+        "con-meo-14.jpg": {
+            "original_sha256": "3a4dceef1250d26cc930934ffb02f68a53636cc67c5492ea2f0a6cac49f923a0",
+            "watermarked_sha256": "fd2638c7d2d75bb1078d2f20f090eb40badb1962e14bf18a7f459a806d844ae4"
+        },
+        "cuoi-ngua-16.jpg": {
+            "original_sha256": "0d8a96ee8d8e5bf4bc34b80bae1784b6728f03a16e9c17abc1fd8d33f26fb14d",
+            "watermarked_sha256": "bd356bad290381abf8b1119a3bc74f07a540b5b0e0363d8fae5355b040a9168b"
+        },
+        "danh-ca-24.jpg": {
+            "original_sha256": "aac34931199ddcee60c9e8e823a8fe3b9f39dddcedff5f4fb6f25e847fb0d3d2",
+            "watermarked_sha256": "98bbd268201fc88bb6b93c45b59ef1f6d8dc664ae0cba4c9f47c84a9e68827f2"
+        },
+        "doi-mat-05.jpg": {
+            "original_sha256": "b657826d9cb30225c9c827b95ca2fa7d947035108adf03a5d738379b63b2c687",
+            "watermarked_sha256": "82db9e4e19f2c7d41ad6b99926d724102bad992660d5d2e944633f87b2b23d96"
+        },
+        "duong-la-do-11.jpg": {
+            "original_sha256": "4aa0c6c6464199f67e222a42d51943fdfcfb98e94c8dc27bcfa12f8d3ba3137f",
+            "watermarked_sha256": "c063e2c3ad8d40eb2f45edd7bf087a505f1d84df55861a2a3ce3f4a29a36b8b4"
+        },
+        "ganh-hang-rong-22.jpg": {
+            "original_sha256": "453f263b72e239384c2f1e897d5b7105aff65181142df15031cfb35ffc869eed",
+            "watermarked_sha256": "ca1c9129dcf4b2023669ea12ce4525ff83824f76f5ca225ee1fe88b3bfc0fe76"
+        },
+        "ham-ca-map-23.jpg": {
+            "original_sha256": "2b4fca23ad314ca28c35de10b94092d2879470deba7abbac2755bbd7e825bde5",
+            "watermarked_sha256": "87b230cf851a65988506c78ea9e14597dee2ba333f77547f2290511417106863"
+        },
+        "ho-guom-20.jpg": {
+            "original_sha256": "2eddaaf809e66682d6943628c737ddc51b35e29085c50b82885c18af6be66153",
+            "watermarked_sha256": "eb9270c111130994942110b63d61cf1c42015c392465e157ef67b646dc4a335b"
+        },
+        "hoa-huong-duong-03.jpg": {
+            "original_sha256": "d78ff3b9d88f2fe18cd68aeffa19949183c147bcaa09cfc254a8865f14f58967",
+            "watermarked_sha256": "1f94d56652945970b607e955d2313a27abf189407eb23a661398a6f85c6eae82"
+        },
+        "hoa-sen-26.jpg": {
+            "original_sha256": "e0d26a7e646539b4e24cb4823a825e0ee69b3aa7b7c58fd0e14a895ea6784d38",
+            "watermarked_sha256": "14de91bcf3f2bb00f3aeb8e1ca8db6b309951cc1eb1cb94f6dc12dfe5fdc7909"
+        },
+        "hoa-tulip-17.jpg": {
+            "original_sha256": "753842a3a0cec437680a76db5bb3b74bb06481341b123f8c5d93a3e2b4bf46f6",
+            "watermarked_sha256": "286a4527699300bc7e7accc13d0b3be2a8b347d3ef878b3b17289cd3b379c998"
+        },
+        "hoang-hon-12.jpg": {
+            "original_sha256": "d5f438894fe49f99f2bf2ec3fc7f695f776229652c078c54fa6e41cdd70e714f",
+            "watermarked_sha256": "c1d34e358cee96690b8dd7e66b2fad91351c4234e400f21f3fbf89ce071c9ae9"
+        },
+        "lang-bac-28.jpg": {
+            "original_sha256": "8a35bd056b1bb025fb6d8e3d44d6414734906434cefbc392880dbb165463aee7",
+            "watermarked_sha256": "98f215ee02f8743a29dba38c8578d76f1721078e09e5e37a5e06f4fdf77528e8"
+        },
+        "mua-thu-02.jpg": {
+            "original_sha256": "a81154ac4b9d73056761a619b064901fe5e5caabffb8b289f5043e0d4bd7c8fd",
+            "watermarked_sha256": "7f9f818ec39a39e6102f38eb7d280978d998b67602de3dde31d683b4bd578905"
+        },
+        "phong-canh-chau-phi-01.jpg": {
+            "original_sha256": "a11393865b2300aa39967b7c774f3966a32ee1185c33be1aaecf446c76438908",
+            "watermarked_sha256": "69bd480eebb0ed5904e54e9bf7744b11a5d15e14c3f937e143bac82e99ea8470"
+        },
+        "phong-canh-que-15.jpg": {
+            "original_sha256": "81dd6bd8c1508f2b252eef015b4b05ccd8f7eb2877fa041c65fd297acd9d0c44",
+            "watermarked_sha256": "af5ef6e570a4cf843244e56a1a37e93058fc38e0d8ad7ccc443941960695c13d"
+        },
+        "sa-mac-06.jpg": {
+            "original_sha256": "df9c77c83eacbbee6f50c70ed26f6fd3b3bb191b4a7267f0992797cf3bc52352",
+            "watermarked_sha256": "990d265ad858946cffd559280b0b5600b46bfc17f83fbe3721e9437a8cb27c0b"
+        },
+        "tach-tra-09.jpg": {
+            "original_sha256": "bfdbd8d62178149a9a83d2aa35cb2725db86ee08a07b548355fa0a14e60ab2e2",
+            "watermarked_sha256": "4a89797db2fff00a6db4b9d31bfe458e8b0421a50685a659b9e636044118afcb"
+        }
+    }
+}
