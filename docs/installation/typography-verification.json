@@ -1,0 +1,351 @@
+{
+  "date_utc": "2026-10-28T16:00:08.893033+00:00",
+  "platform": "linux",
+  "browser": "150.0.4078.65",
+  "windows_tested": false,
+  "base_commit": "b4bff6a7232d216352ab858973385b4168bc44ee",
+  "wordpress_before": {
+    "stylesheet": "astra-child",
+    "template": "astra",
+    "blog_charset": "UTF-8",
+    "theme_version": "2.4.1",
+    "additional_css": "",
+    "astra_typography": [],
+    "files_sha256": {
+      "style.css": "8fa70b6b047f17d9347b4242e502d140d1af950c07c129c0b60a6e6f805eb72a",
+      "functions.php": "e9500e2031a776ff7ddadec5c24a087e3eceae3a2fb125b01fcf9af9c3d2574c",
+      "front-page.php": "07ea97d0af3e7e198db2db2782444f6c77bd87a971995799a9dd574f2b075af3",
+      "js/custom.js": "24b523ce9de367dffd599d66bc17e746dc23db339c204b86138140a467880712",
+      "inc/hero.php": "bcfd291b0539ae6ebbb530ecae5ffdad5a13a15163e7c75c5690b783707ed1ee"
+    }
+  },
+  "rendered_before": [
+    {
+      "selector": "#hero-title",
+      "text": "Giữ một khoảnh khắc.Kể ngàn câu chuyện.",
+      "nfc": true,
+      "combining": [],
+      "unusualSpaces": [],
+      "fontFamily": "Georgia, \"Times New Roman\", serif",
+      "fontSize": "50.4px",
+      "fontWeight": "400",
+      "fontStyle": "normal",
+      "fontSynthesis": "weight style small-caps",
+      "letterSpacing": "-1.7px",
+      "lineHeight": "63px",
+      "fonts": [
+        {
+          "familyName": "Liberation Serif",
+          "postScriptName": "LiberationSerif",
+          "isCustomFont": false,
+          "glyphCount": 20
+        },
+        {
+          "familyName": "Liberation Serif",
+          "postScriptName": "LiberationSerif-Italic",
+          "isCustomFont": false,
+          "glyphCount": 19
+        }
+      ]
+    },
+    {
+      "selector": "#hero-title em",
+      "text": "Kể ngàn câu chuyện.",
+      "nfc": true,
+      "combining": [],
+      "unusualSpaces": [],
+      "fontFamily": "Georgia, \"Times New Roman\", serif",
+      "fontSize": "50.4px",
+      "fontWeight": "400",
+      "fontStyle": "italic",
+      "fontSynthesis": "weight style small-caps",
+      "letterSpacing": "-1.7px",
+      "lineHeight": "63px",
+      "fonts": [
+        {
+          "familyName": "Liberation Serif",
+          "postScriptName": "LiberationSerif-Italic",
+          "isCustomFont": false,
+          "glyphCount": 19
+        }
+      ]
+    },
+    {
+      "selector": ".lk-hero-caption strong",
+      "text": "Lối về bình yên",
+      "nfc": true,
+      "combining": [],
+      "unusualSpaces": [],
+      "fontFamily": "Georgia, serif",
+      "fontSize": "22px",
+      "fontWeight": "400",
+      "fontStyle": "normal",
+      "fontSynthesis": "weight style small-caps",
+      "letterSpacing": "normal",
+      "lineHeight": "36.3px",
+      "fonts": [
+        {
+          "familyName": "Liberation Serif",
+          "postScriptName": "LiberationSerif",
+          "isCustomFont": false,
+          "glyphCount": 15
+        }
+      ]
+    },
+    {
+      "selector": ".lk-section-heading h2",
+      "text": "Thế giới qua lăng kính.",
+      "nfc": true,
+      "combining": [],
+      "unusualSpaces": [],
+      "fontFamily": "Georgia, \"Times New Roman\", serif",
+      "fontSize": "42px",
+      "fontWeight": "400",
+      "fontStyle": "normal",
+      "fontSynthesis": "weight style small-caps",
+      "letterSpacing": "-1px",
+      "lineHeight": "54.6px",
+      "fonts": [
+        {
+          "familyName": "Liberation Serif",
+          "postScriptName": "LiberationSerif",
+          "isCustomFont": false,
+          "glyphCount": 13
+        },
+        {
+          "familyName": "Liberation Serif",
+          "postScriptName": "LiberationSerif-Italic",
+          "isCustomFont": false,
+          "glyphCount": 10
+        }
+      ]
+    },
+    {
+      "selector": ".lk-card-info h3",
+      "text": "Hua Thi Tu",
+      "nfc": true,
+      "combining": [],
+      "unusualSpaces": [],
+      "fontFamily": "Georgia, serif",
+      "fontSize": "17px",
+      "fontWeight": "400",
+      "fontStyle": "normal",
+      "fontSynthesis": "weight style small-caps",
+      "letterSpacing": "normal",
+      "lineHeight": "25.5px",
+      "fonts": [
+        {
+          "familyName": "Liberation Serif",
+          "postScriptName": "LiberationSerif",
+          "isCustomFont": false,
+          "glyphCount": 10
+        }
+      ]
+    },
+    {
+      "selector": ".lk-album h3",
+      "text": "Tự do",
+      "nfc": true,
+      "combining": [],
+      "unusualSpaces": [],
+      "fontFamily": "Georgia, serif",
+      "fontSize": "25px",
+      "fontWeight": "400",
+      "fontStyle": "normal",
+      "fontSynthesis": "weight style small-caps",
+      "letterSpacing": "normal",
+      "lineHeight": "normal",
+      "fonts": [
+        {
+          "familyName": "Liberation Serif",
+          "postScriptName": "LiberationSerif",
+          "isCustomFont": false,
+          "glyphCount": 5
+        }
+      ]
+    },
+    {
+      "selector": ".lk-strip p",
+      "text": "Quan sát. Cảm nhận. Lưu giữ.",
+      "nfc": true,
+      "combining": [],
+      "unusualSpaces": [],
+      "fontFamily": "Georgia, serif",
+      "fontSize": "23px",
+      "fontWeight": "400",
+      "fontStyle": "normal",
+      "fontSynthesis": "weight style small-caps",
+      "letterSpacing": "normal",
+      "lineHeight": "37.95px",
+      "fonts": [
+        {
+          "familyName": "Liberation Serif",
+          "postScriptName": "LiberationSerif",
+          "isCustomFont": false,
+          "glyphCount": 19
+        },
+        {
+          "familyName": "Liberation Serif",
+          "postScriptName": "LiberationSerif-Italic",
+          "isCustomFont": false,
+          "glyphCount": 9
+        }
+      ]
+    },
+    {
+      "selector": ".lk-strip i",
+      "text": "Cảm nhận.",
+      "nfc": true,
+      "combining": [],
+      "unusualSpaces": [],
+      "fontFamily": "Georgia, serif",
+      "fontSize": "23px",
+      "fontWeight": "400",
+      "fontStyle": "italic",
+      "fontSynthesis": "weight style small-caps",
+      "letterSpacing": "normal",
+      "lineHeight": "37.95px",
+      "fonts": [
+        {
+          "familyName": "Liberation Serif",
+          "postScriptName": "LiberationSerif-Italic",
+          "isCustomFont": false,
+          "glyphCount": 9
+        }
+      ]
+    },
+    {
+      "selector": ".lk-card-number",
+      "text": "01",
+      "nfc": true,
+      "combining": [],
+      "unusualSpaces": [],
+      "fontFamily": "Georgia, serif",
+      "fontSize": "13px",
+      "fontWeight": "400",
+      "fontStyle": "italic",
+      "fontSynthesis": "weight style small-caps",
+      "letterSpacing": "normal",
+      "lineHeight": "normal",
+      "fonts": [
+        {
+          "familyName": "Liberation Serif",
+          "postScriptName": "LiberationSerif-Italic",
+          "isCustomFont": false,
+          "glyphCount": 2
+        }
+      ]
+    },
+    {
+      "selector": ".lk-about h2",
+      "text": "Thế giới vẫn luôn đẹp.Chỉ cần ta dừng lại nhìn.",
+      "nfc": true,
+      "combining": [],
+      "unusualSpaces": [],
+      "fontFamily": "Georgia, \"Times New Roman\", serif",
+      "fontSize": "45px",
+      "fontWeight": "400",
+      "fontStyle": "normal",
+      "fontSynthesis": "weight style small-caps",
+      "letterSpacing": "-1px",
+      "lineHeight": "63px",
+      "fonts": [
+        {
+          "familyName": "Liberation Serif",
+          "postScriptName": "LiberationSerif",
+          "isCustomFont": false,
+          "glyphCount": 33
+        },
+        {
+          "familyName": "Liberation Serif",
+          "postScriptName": "LiberationSerif-Italic",
+          "isCustomFont": false,
+          "glyphCount": 14
+        }
+      ]
+    },
+    {
+      "selector": "#lk-lightbox-title",
+      "text": "Hua Thi Tu",
+      "nfc": true,
+      "combining": [],
+      "unusualSpaces": [],
+      "fontFamily": "Georgia, \"Times New Roman\", serif",
+      "fontSize": "23px",
+      "fontWeight": "400",
+      "fontStyle": "normal",
+      "fontSynthesis": "weight style small-caps",
+      "letterSpacing": "normal",
+      "lineHeight": "29.9px",
+      "fonts": [
+        {
+          "familyName": "Liberation Serif",
+          "postScriptName": "LiberationSerif",
+          "isCustomFont": false,
+          "glyphCount": 10
+        }
+      ]
+    }
+  ],
+  "font_http": [
+    {
+      "url": "http://baitapnhom1.local/wp-content/themes/astra-child/assets/fonts/lora/lora-italic.woff2",
+      "status": 200,
+      "mime": "application/font-woff2"
+    },
+    {
+      "url": "http://baitapnhom1.local/wp-content/themes/astra-child/assets/fonts/lora/lora-normal.woff2",
+      "status": 200,
+      "mime": "application/font-woff2"
+    }
+  ],
+  "views_after": [
+    {
+      "width": 1440,
+      "charset": "UTF-8",
+      "horizontal_overflow": false,
+      "serif_nodes_checked": 11,
+      "nfc_nfd_style_probes": 24,
+      "rendered_fonts": ["Lora"],
+      "all_fonts_custom": true
+    },
+    {
+      "width": 768,
+      "charset": "UTF-8",
+      "horizontal_overflow": false,
+      "serif_nodes_checked": 11,
+      "nfc_nfd_style_probes": 24,
+      "rendered_fonts": ["Lora"],
+      "all_fonts_custom": true
+    },
+    {
+      "width": 390,
+      "charset": "UTF-8",
+      "horizontal_overflow": false,
+      "serif_nodes_checked": 11,
+      "nfc_nfd_style_probes": 24,
+      "rendered_fonts": ["Lora"],
+      "all_fonts_custom": true
+    },
+    {
+      "width": 320,
+      "charset": "UTF-8",
+      "horizontal_overflow": false,
+      "serif_nodes_checked": 11,
+      "nfc_nfd_style_probes": 24,
+      "rendered_fonts": ["Lora"],
+      "all_fonts_custom": true
+    }
+  ],
+  "font_coverage": "Both full cmap fonts cover 154 Vietnamese NFC/NFD codepoints; see font manifest",
+  "deployment": "style.css and assets/fonts/lora copied to Ubuntu LocalWP and compared byte-for-byte; no PHP/database/image edits",
+  "read_only_regression": {
+    "image_urls_preserved": 33,
+    "gallery_cards": 32,
+    "search": true,
+    "album": true,
+    "author": true,
+    "lightbox": true,
+    "javascript_errors": []
+  }
+}
