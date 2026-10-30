@@ -1,38 +1,59 @@
 <?php
 /** Lăng Kính — Astra child theme for the Group 1 gallery. */
+// Ngăn truy cập trực tiếp vào tệp; mã chỉ được thực thi trong môi trường WordPress.
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
+// Khai báo các tính năng và kích thước ảnh mà giao diện con sử dụng.
 add_action( 'after_setup_theme', function () {
+    // Cho phép bài viết/tác phẩm sử dụng ảnh đại diện (Featured Image).
     add_theme_support( 'post-thumbnails' );
+    // Để WordPress tự quản lý thẻ tiêu đề <title> của trang.
     add_theme_support( 'title-tag' );
+    // Đăng ký kích thước ảnh riêng cho thư viện: rộng 800, cao 1000; không cắt ảnh theo khung cố định.
     add_image_size( 'lk-gallery', 800, 1000, false );
 } );
 
+// Nạp CSS và JavaScript của theme cha và theme con ở giao diện người dùng.
 add_action( 'wp_enqueue_scripts', function () {
     wp_enqueue_style( 'astra-parent', get_template_directory_uri() . '/style.css', array(), wp_get_theme( 'astra' )->get( 'Version' ) );
     wp_enqueue_style( 'lk-style', get_stylesheet_uri(), array( 'astra-parent' ), filemtime( get_stylesheet_directory() . '/style.css' ) );
     wp_enqueue_script( 'lk-gallery', get_stylesheet_directory_uri() . '/js/custom.js', array(), filemtime( get_stylesheet_directory() . '/js/custom.js' ), true );
 } );
 
+// Đăng ký loại nội dung tùy chỉnh và phân loại chủ đề trong WordPress.
 add_action( 'init', function () {
+    // Tạo Custom Post Type lk_photo để quản lý các tác phẩm ảnh độc lập với bài viết thông thường.
     register_post_type( 'lk_photo', array(
         'labels' => array( 'name' => 'Tác phẩm', 'singular_name' => 'Tác phẩm', 'add_new_item' => 'Thêm tác phẩm', 'edit_item' => 'Sửa tác phẩm', 'featured_image' => 'Ảnh tác phẩm', 'set_featured_image' => 'Chọn ảnh tác phẩm' ),
+        // Dùng bộ quyền riêng cho tác phẩm, giúp phân biệt quyền gửi và quyền duyệt.
         'capability_type' => array( 'lk_photo', 'lk_photos' ),
+        // Để WordPress ánh xạ quyền meta-capability sang quyền người dùng phù hợp.
         'map_meta_cap' => true,
+        // Liên kết loại nội dung tác phẩm với phân loại chủ đề/album lk_topic.
         'taxonomies' => array( 'lk_topic' ),
+        // Cho phép hiển thị công khai, hỗ trợ REST API và đặt biểu tượng trong menu quản trị.
         'public' => true, 'show_in_rest' => true, 'menu_icon' => 'dashicons-format-gallery',
+        // Bật các trường: tiêu đề, nội dung, ảnh đại diện, tác giả và trích đoạn.
         'supports' => array( 'title', 'editor', 'thumbnail', 'author', 'excerpt' ),
+        // Đường dẫn thân thiện cho từng tác phẩm có dạng /tac-pham/ten-tac-pham/.
         'rewrite' => array( 'slug' => 'tac-pham' ),
     ) );
+    // Tạo taxonomy lk_topic và gắn taxonomy này với loại nội dung lk_photo.
     register_taxonomy( 'lk_topic', 'lk_photo', array(
         'labels' => array( 'name' => 'Chủ đề / Album', 'singular_name' => 'Chủ đề', 'add_new_item' => 'Thêm chủ đề' ),
+        // Cho phép phân cấp chủ đề cha/con, công khai và hỗ trợ REST API.
         'hierarchical' => true, 'show_in_rest' => true, 'public' => true,
+        // Đường dẫn trang chủ đề có slug /chu-de/.
         'rewrite' => array( 'slug' => 'chu-de' ),
     ) );
 } );
 
 /** One catalog for bundled photos and the submission topic choices. */
+// Danh mục dữ liệu tập trung cho 30 ảnh mẫu và các lựa chọn chủ đề khi gửi tác phẩm.
+/** One catalog for bundled photos and the submission topic choices. */
+// Trả về danh sách ảnh mẫu kèm tên file, tiêu đề, slug chủ đề và tên chủ đề.
 function lk_demo_photos() {
+    // Mỗi phần tử gồm: tên file ảnh, tiêu đề hiển thị, mã chủ đề và tên chủ đề.
     return array(
         array('phong-canh-que-15','Lối về bình yên','doi-song','Đời sống'),
         array('co-gai-che-o-08','Một thoáng dịu dàng','chan-dung','Chân dung'),
@@ -68,82 +89,8 @@ function lk_demo_photos() {
 }
 
 /** Published works with valid images first, followed by the 30 bundled demos. */
+// Lấy tác phẩm đã xuất bản có ảnh hợp lệ trước, sau đó nối thêm 30 ảnh mẫu đi kèm theme.
+/** Published works with valid images first, followed by the 30 bundled demos. */
+// Gom dữ liệu ảnh từ tác phẩm do người dùng đăng và bộ ảnh mẫu thành một danh sách thống nhất.
 function lk_gallery_items() {
-    $items = array();
-    $photos = get_posts( array( 'post_type' => 'lk_photo', 'post_status' => 'publish', 'posts_per_page' => -1 ) );
-    foreach ( $photos as $photo ) {
-        $id = get_post_thumbnail_id( $photo->ID );
-        if ( ! $id ) { continue; }
-        $src = wp_get_attachment_image_url( $id, 'lk-gallery' );
-        $full = wp_get_attachment_image_url( $id, 'full' );
-        if ( ! $src || ! $full ) { continue; }
-        $terms = get_the_terms( $photo->ID, 'lk_topic' );
-        $topics = array();
-        if ( $terms && ! is_wp_error( $terms ) ) {
-            foreach ( $terms as $term ) { $topics[ $term->slug ] = $term->name; }
-        }
-        if ( ! $topics ) { $topics = array( 'tu-do' => 'Tự do' ); }
-        $items[] = array(
-            'title' => get_the_title( $photo ), 'author' => get_the_author_meta( 'display_name', $photo->post_author ),
-            'topics' => $topics, 'src' => $src,
-            'full' => $full,
-            'srcset' => wp_get_attachment_image_srcset( $id, 'lk-gallery' ),
-            'alt' => get_post_meta( $id, '_wp_attachment_image_alt', true ) ?: get_the_title( $photo ),
-        );
-    }
-    foreach ( lk_demo_photos() as $row ) {
-        $term = get_term_by( 'slug', $row[2], 'lk_topic' ) ?: get_term_by( 'name', $row[3], 'lk_topic' );
-        $topic_slug = $term ? $term->slug : $row[2];
-        $topic_name = $term ? $term->name : $row[3];
-        $url = get_stylesheet_directory_uri() . '/assets/demo-watermarked/' . $row[0] . '.jpg';
-        $items[] = array( 'title' => $row[1], 'author' => 'Bộ sưu tập mẫu', 'topics' => array( $topic_slug => $topic_name ), 'src' => $url, 'full' => $url, 'srcset' => '', 'alt' => $row[1] );
-    }
-    return $items;
-}
-
-require_once get_stylesheet_directory() . '/inc/upload-form.php';
-require_once get_stylesheet_directory() . '/inc/hero.php';
-
-/** Versioned setup also runs when files are updated on an already active theme. */
-add_action('init', 'lk_upgrade_theme', 20);
-function lk_upgrade_theme() {
-    if ( '2.4.0' === get_option( 'lk_setup_version' ) ) {
-        return;
-    }
-    $submit_caps = array( 'edit_lk_photos', 'delete_lk_photos' );
-    $review_caps = array_merge( $submit_caps, array(
-        'publish_lk_photos', 'edit_others_lk_photos', 'delete_others_lk_photos',
-        'read_private_lk_photos', 'edit_private_lk_photos', 'delete_private_lk_photos',
-        'edit_published_lk_photos', 'delete_published_lk_photos',
-    ) );
-    foreach ( array( 'administrator', 'editor', 'author' ) as $role_name ) {
-        $role = get_role( $role_name );
-        if ( ! $role ) { continue; }
-        if ( 'author' === $role_name ) {
-            foreach ( array_diff( $review_caps, $submit_caps ) as $cap ) {
-                $role->remove_cap( $cap );
-            }
-        }
-        foreach ( 'author' === $role_name ? $submit_caps : $review_caps as $cap ) {
-            $role->add_cap( $cap );
-        }
-    }
-    if ( lk_seed_gallery_topics() && lk_create_upload_page() ) {
-        flush_rewrite_rules( false );
-        update_option( 'lk_setup_version', '2.4.0' );
-    }
-}
-
-/** Add the existing demo topics once, preserving names and terms already on site. */
-function lk_seed_gallery_topics() {
-    $topics = array( 'tu-do' => 'Tự do' );
-    foreach ( lk_demo_photos() as $row ) {
-        $topics[ $row[2] ] = $row[3];
-    }
-    foreach ( $topics as $slug => $name ) {
-        if ( get_term_by( 'slug', $slug, 'lk_topic' ) || get_term_by( 'name', $name, 'lk_topic' ) ) { continue; }
-        $result = wp_insert_term( $name, 'lk_topic', array( 'slug' => $slug ) );
-        if ( is_wp_error( $result ) && 'term_exists' !== $result->get_error_code() ) { return false; }
-    }
-    return true;
-}
+    // Mảng kết quả chứa dữ liệu ảnh để giao diện thư viện sử dụng.
