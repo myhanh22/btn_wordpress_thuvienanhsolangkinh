@@ -1,0 +1,172 @@
+{
+  "time_utc": "2026-10-27T15:01:32.200Z",
+  "scope": "http://baitapnhom1.local",
+  "after_actual_localwp_stop_start": true,
+  "checks": [
+    {
+      "check": "30 watermarked demos remain visible",
+      "passed": true
+    },
+    {
+      "check": "Upload form uses new login URL and return target",
+      "passed": true
+    },
+    {
+      "check": "Successful HTTP login: subscriber",
+      "passed": true
+    },
+    {
+      "check": "Subscriber upload is refused",
+      "passed": true
+    },
+    {
+      "check": "Successful HTTP login: author",
+      "passed": true
+    },
+    {
+      "check": "Login redirects back to upload form",
+      "passed": true
+    },
+    {
+      "check": "Actual LocalWP upload stored: Security fixture one",
+      "passed": true
+    },
+    {
+      "check": "Actual LocalWP upload stored: Security fixture two",
+      "passed": true
+    },
+    {
+      "check": "Consecutive uploads create two pending works",
+      "passed": true
+    },
+    {
+      "check": "Actual HTTP file over 12 MB refused",
+      "passed": true
+    },
+    {
+      "check": "Invalid nonce refused after hardening",
+      "passed": true
+    },
+    {
+      "check": "Invalid JPEG refused after hardening",
+      "passed": true
+    },
+    {
+      "check": "Authenticated REST nonce available",
+      "passed": true
+    },
+    {
+      "check": "Author cannot create publish through REST",
+      "passed": true
+    },
+    {
+      "check": "Author cannot create future through REST",
+      "passed": true
+    },
+    {
+      "check": "Author cannot create private through REST",
+      "passed": true
+    },
+    {
+      "check": "Author cannot promote own pending work through REST",
+      "passed": true
+    },
+    {
+      "check": "Author cannot publish own pending work through wp-admin form POST",
+      "passed": true
+    },
+    {
+      "check": "Successful HTTP login: editor",
+      "passed": true
+    },
+    {
+      "check": "Editor sees pending work with thumbnail: fixture one",
+      "passed": true
+    },
+    {
+      "check": "Editor sees pending work with thumbnail: fixture two",
+      "passed": true
+    },
+    {
+      "check": "Editor approves work on real LocalWP",
+      "passed": true
+    },
+    {
+      "check": "Successful HTTP login: administrator",
+      "passed": true
+    },
+    {
+      "check": "Administrator can read pending work",
+      "passed": true
+    },
+    {
+      "check": "Authenticated admin-ajax heartbeat remains functional",
+      "passed": true
+    },
+    {
+      "check": "Weak password rejected by actual REST user endpoint",
+      "passed": true
+    },
+    {
+      "check": "Weak password rejected by actual admin profile even with weak-password checkbox",
+      "passed": true
+    },
+    {
+      "check": "Approved image appears with all 30 demos",
+      "passed": true
+    },
+    {
+      "check": "Fixed banner unaffected by new publication",
+      "passed": true
+    },
+    {
+      "check": "Search remains functional",
+      "passed": true
+    },
+    {
+      "check": "Lightbox opens",
+      "passed": true
+    },
+    {
+      "check": "Author filter still finds 30 demos",
+      "passed": true
+    },
+    {
+      "check": "Album filtering still works",
+      "passed": true
+    },
+    {
+      "check": "Mobile gallery remains within viewport",
+      "passed": true
+    },
+    {
+      "check": "Logout uses renamed login endpoint",
+      "passed": true
+    },
+    {
+      "check": "Logout removes authentication cookie",
+      "passed": true
+    },
+    {
+      "check": "Configured lockout occurs on fifth failure, not before",
+      "passed": true
+    },
+    {
+      "check": "Correct disposable password is blocked during lockout",
+      "passed": true
+    },
+    {
+      "check": "Successful HTTP login: subscriber",
+      "passed": true
+    },
+    {
+      "check": "Private CLI recovery restores access without altering administrator password",
+      "passed": true
+    },
+    {
+      "check": "No frontend JavaScript errors during regression",
+      "passed": true
+    }
+  ],
+  "screenshot_redaction": "login username field blurred; no private URL/cookie/key captured"
+}

@@ -1,0 +1,14 @@
+{
+  "converter": "Pandoc 3.13, python-docx; rendered with LibreOffice 26.8",
+  "rendered_pages": 30,
+  "cover_contains_all_five_blank_member_rows": true,
+  "unresolved_question_mark_references": false,
+  "embedded_media_count": 15,
+  "table_count": 10,
+  "docx_sha256": "e99baadeb1f97d83ce7fa0dc2891c9ca4e577f5ab8f43559bf963e8f771f6fc2",
+  "review": "Rendered for layout inspection; PDF LaTeX is canonical. DOCX numbering/references are static at export.",
+  "limitations": [
+    "Layout may differ in Microsoft Word; rebuild after major edits",
+    "No automatic reassignment of student names/contributions"
+  ]
+}

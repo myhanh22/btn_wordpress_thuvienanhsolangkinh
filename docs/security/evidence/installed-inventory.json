@@ -1,0 +1,62 @@
+{
+    "wordpress": "7.1.3",
+    "plugins": [
+        {
+            "slug": "webp-converter-for-media",
+            "version": "6.7.0",
+            "active": false
+        },
+        {
+            "slug": "image-watermark",
+            "version": "2.0.16",
+            "active": true
+        },
+        {
+            "slug": "limit-login-attempts-reloaded",
+            "version": "3.3.10",
+            "active": true
+        },
+        {
+            "slug": "lang-kinh-security",
+            "version": "1.0.0",
+            "active": true
+        },
+        {
+            "slug": "wordfence",
+            "version": "9.0.2",
+            "active": true
+        },
+        {
+            "slug": "wps-hide-login",
+            "version": "1.9.19",
+            "active": true
+        }
+    ],
+    "themes": [
+        {
+            "slug": "astra-child",
+            "version": "2.4.1",
+            "active": true
+        },
+        {
+            "slug": "astra",
+            "version": "4.14.1",
+            "active": false
+        },
+        {
+            "slug": "twentytwentyfive",
+            "version": "1.5",
+            "active": false
+        },
+        {
+            "slug": "twentytwentyfour",
+            "version": "1.6",
+            "active": false
+        },
+        {
+            "slug": "twentytwentythree",
+            "version": "1.7",
+            "active": false
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{fontspec}\setmainfont{Liberation Serif}
+\usetikzlibrary{arrows.meta,positioning}
+\begin{document}
+\begin{tikzpicture}[node distance=9mm,box/.style={draw,rounded corners,align=center,text width=4.2cm,minimum height=12mm,font=\small},>=Stealth]
+\node[box] (client) {Trình duyệt\\Khách / Author / Editor / Admin};
+\node[box,below=of client] (nginx) {Nginx LocalWP\\static, WebP, chặn endpoint};
+\node[box,below=of nginx] (wp) {PHP-FPM + WordPress\\Child theme + plugin/module};
+\node[box,below left=10mm and 3mm of wp] (db) {MySQL\\post, meta, taxonomy, user};
+\node[box,below right=10mm and 3mm of wp] (disk) {Filesystem\\uploads, ảnh mẫu, WebP};
+\draw[->] (client)--(nginx);\draw[->] (nginx)--(wp);\draw[<->] (wp)--(db);\draw[<->] (wp)--(disk);
+\end{tikzpicture}
+\end{document}
