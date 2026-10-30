@@ -1,0 +1,18 @@
+{
+  "time_utc": "2026-10-27T10:52:46.349341+00:00",
+  "scope": "http://baitapnhom1.local",
+  "directories_0755": 1039,
+  "application_files_0644": 6089,
+  "sensitive_wordfence_files_0600": 6,
+  "permission_violation_count": 0,
+  "wp_config_mode": "0o400",
+  "owner_group_unchanged": true,
+  "php_worker_uid_matches_site_owner": true,
+  "nginx_worker_uid_matches_site_owner": true,
+  "php_error_log_exists": false,
+  "new_php_warning_fatal_notice_count": 0,
+  "php_log_tail_bytes_checked": 0,
+  "fixtures_cleaned": true,
+  "new_login_url_not_published": true,
+  "localwp_debug_helper_mode_normalized": true
+}

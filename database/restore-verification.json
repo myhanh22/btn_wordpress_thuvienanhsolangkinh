@@ -1,0 +1,18 @@
+{
+  "scope": "isolated restore from database/gallery-demo.sql, not LocalWP production proof",
+  "database_import": true,
+  "serialized_options_valid": true,
+  "restored_attachments": 9,
+  "public_gallery_count": 31,
+  "sample_count": 30,
+  "topic_count": 8,
+  "bootstrap_password_check": true,
+  "errors": [],
+  "http_bootstrap_login": true,
+  "admin_dashboard_access": true,
+  "restored_url_checked": true,
+  "upload_page_count": 1,
+  "sql_sha256": "7e4cb9d45d95cb794bb31935ad2de5e0768d4f096970e19d4028b5b88430b70a",
+  "verification_time_utc": "2026-10-27T15:33:43+00:00",
+  "http_server": "PHP 8.2.29 built-in development server, loopback only; not LocalWP Nginx"
+}

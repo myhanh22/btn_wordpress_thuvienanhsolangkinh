@@ -1,0 +1,92 @@
+\documentclass[11pt,a4paper,oneside]{report}
+\usepackage[margin=2.5cm,headheight=15pt]{geometry}
+\usepackage{fontspec}
+\setmainfont{Liberation Serif}
+\setsansfont{DejaVu Sans}
+\setmonofont[Scale=0.82]{Noto Sans Mono}
+\usepackage{graphicx,booktabs,longtable,tabularx,array,float,xcolor}
+\usepackage{fvextra}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning}
+\usepackage{setspace,fancyhdr,caption,url,xurl}
+\usepackage[unicode,colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!50!black,citecolor=blue!45!black]{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+\setstretch{1.16}
+\setlength{\parskip}{4pt}
+\setlength{\intextsep}{6pt plus 2pt minus 2pt}
+\setlength{\parindent}{1.1em}
+\setlength{\emergencystretch}{3em}
+\renewcommand{\chaptername}{Phần}
+\renewcommand{\contentsname}{Mục lục}
+\renewcommand{\listfigurename}{Danh mục hình}
+\renewcommand{\listtablename}{Danh mục bảng}
+\renewcommand{\figurename}{Hình}
+\renewcommand{\tablename}{Bảng}
+\renewcommand{\bibname}{Tài liệu tham khảo}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small Lăng Kính — Nhóm 1}\fancyhead[R]{\small Báo cáo học phần}\fancyfoot[C]{\thepage}
+\captionsetup{font=small,labelfont=bf}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\code}[1]{\nolinkurl{#1}}
+\newcommand{\shot}[4][0.94]{\begin{figure}[H]\centering\includegraphics[width=#1\linewidth,height=0.42\textheight,keepaspectratio]{figures/#2}\caption[\csname short#4\endcsname]{#3}\label{#4}\end{figure}}
+\newcommand{\sourcefile}[3]{\VerbatimInput[fontsize=\scriptsize,breaklines=true,breakanywhere=true,firstline=#2,lastline=#3]{../../#1}}
+\expandafter\def\csname shortfig:home\endcsname{Trang chủ desktop}
+\expandafter\def\csname shortfig:albums\endcsname{Album và chủ đề}
+\expandafter\def\csname shortfig:search\endcsname{Tìm kiếm không dấu}
+\expandafter\def\csname shortfig:lightbox\endcsname{Lightbox}
+\expandafter\def\csname shortfig:uploadguest\endcsname{Chặn khách chưa đăng nhập}
+\expandafter\def\csname shortfig:uploadform\endcsname{Form gửi tác phẩm}
+\expandafter\def\csname shortfig:pending\endcsname{Thông báo chờ duyệt}
+\expandafter\def\csname shortfig:moderation\endcsname{Kiểm duyệt trong wp-admin}
+\expandafter\def\csname shortfig:watermark\endcsname{Watermark trên WebP ảnh mới}
+\expandafter\def\csname shortfig:network\endcsname{Network: WebP}
+\expandafter\def\csname shortfig:fallback\endcsname{Network: JPEG fallback}
+\expandafter\def\csname shortfig:hardening\endcsname{Cấu hình module bảo mật}
+\expandafter\def\csname shortfig:restore\endcsname{Khôi phục demo trên môi trường riêng}
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}\centering
+\vspace*{0.3cm}
+{\large TRƯỜNG: \rule{9cm}{0.4pt}}\\[0.6cm]
+{\large KHOA: \rule{9.5cm}{0.4pt}}\\[1.2cm]
+{\Large\bfseries BÁO CÁO HỌC PHẦN}\\[0.7cm]
+{\Large Môn học: \rule{8cm}{0.4pt}}\\[1.3cm]
+{\huge\bfseries THƯ VIỆN ẢNH SỐ\\[0.25cm] LĂNG KÍNH}\\[0.7cm]
+{\Large WordPress — Mã nguồn mở và an toàn hệ thống}\\[0.8cm]
+{\large Nhóm 1}\\[1cm]
+\begin{tabular}{ll}Lớp: & \rule{8cm}{0.4pt}\\[0.45cm]Giảng viên: & \rule{8cm}{0.4pt}\end{tabular}
+\vfill
+\begin{tabular}{cll}\toprule Thành viên & Họ và tên & MSSV\\\midrule
+TV1 & \rule{6cm}{0.4pt} & \rule{3.5cm}{0.4pt}\\[0.35cm]
+TV2 & \rule{6cm}{0.4pt} & \rule{3.5cm}{0.4pt}\\[0.35cm]
+TV3 & \rule{6cm}{0.4pt} & \rule{3.5cm}{0.4pt}\\[0.35cm]
+TV4 & \rule{6cm}{0.4pt} & \rule{3.5cm}{0.4pt}\\[0.35cm]
+TV5 & \rule{6cm}{0.4pt} & \rule{3.5cm}{0.4pt}\\\bottomrule\end{tabular}
+\vfill {\large Tháng 10 năm 2026}
+\end{titlepage}
+\pagenumbering{roman}\hypersetup{pageanchor=true}
+\chapter*{Phạm vi và tính trung thực của báo cáo}
+Báo cáo trình bày bộ mã nguồn tại nhánh \code{huyyhoangg}, mốc đối chiếu ban đầu \code{55dd374}; các thay đổi bàn giao tiếp theo chưa được commit. Repo nguồn: \url{https://github.com/huyyhoangg11/bai-tap-nhom-wordpress-gallery}. Repo nộp cuối: \rule{7cm}{0.4pt}.
+
+Không tìm thấy PDF đề bài hoặc DOCX cũ trong repo tại lần rà soát này. Ma trận yêu cầu sử dụng nội dung yêu cầu do người quản lý cung cấp; cần đối chiếu lại nếu giảng viên phát hành bản đề khác. Thông tin trường, môn học, lớp, giảng viên và danh tính thành viên để trống. WBS là đề xuất, chưa xác nhận cá nhân đã thực hiện công việc.
+
+Bằng chứng được chia thành ba nguồn: kiểm thử LocalWP thật; kiểm thử khôi phục trên môi trường riêng; và log lịch sử đã có. Mỗi nguồn có giới hạn riêng. Một ảnh cấu hình chứng minh trạng thái hiển thị tại thời điểm chụp, không thay thế kiểm thử hành vi. Hai tác phẩm bổ sung trong SQL demo chỉ được tạo trên clone để minh họa quy trình; không được mô tả là dữ liệu đã xuất bản của site chính.
+
+Báo cáo không công bố mật khẩu, token, cookie, URL đăng nhập riêng hoặc danh tính tài khoản thật. Cấu hình cấp phép Wordfence và URL riêng phải thiết lập lại khi cài trên máy khác. Quyền sử dụng từng ảnh mẫu chưa có hồ sơ nguồn/giấy phép đầy đủ; việc có ảnh trong repo không chứng minh quyền tái phân phối công khai.
+\setcounter{tocdepth}{1}
+\begingroup\small\setstretch{1.0}
+\makeatletter
+\def\@makeschapterhead#1{\vspace*{10pt}{\parindent\z@\raggedright\normalfont\huge\bfseries #1\par\nobreak\vskip18pt}}
+\makeatother
+\tableofcontents
+\listoffigures
+\begingroup\let\clearpage\relax\listoftables\endgroup
+\endgroup
+\clearpage\pagenumbering{arabic}
+\input{sections/01-operating-systems}
+\input{sections/02-website}
+\input{sections/03-security}
+\input{sections/04-handover-wbs}
+\bibliographystyle{unsrt}
+\bibliography{references}
+\end{document}
